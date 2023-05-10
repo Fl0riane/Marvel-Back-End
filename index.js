@@ -5,7 +5,7 @@ const cors = require("cors");
 
 const app = express();
 app.use(express.json());
-ap.use(morgan());
+app.use(morgan());
 app.use(cors());
 
 const charactersRoutes = require("./routes/characters");
