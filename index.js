@@ -1,9 +1,11 @@
 require("dotenv").config();
 const express = require("express");
-app.use(express.json());
 const morgan = require("morgan");
-ap.use(morgan());
 const cors = require("cors");
+
+const app = express();
+app.use(express.json());
+ap.use(morgan());
 app.use(cors());
 
 const charactersRoutes = require("./routes/characters");
