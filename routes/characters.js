@@ -4,12 +4,13 @@ const axios = require("axios");
 
 router.get("/characters", async (req, res) => {
   try {
-    const name = req.query.name || "";
+    const name = req.query.research || "";
     const limit = req.query.limit || "100";
     const skip = req.query.skip || "0";
     const response = await axios.get(
-      `https://lereacteur-marvel-api.herokuapp.com/characters/?apiKey=${process.env.API_KEY}&name=${name}&skip=${skip}&limit=${limit}`
+      `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.API_KEY}&name=${name}&skip=${skip}&limit=${limit}`
     );
+
     const data = response.data;
     console.log(data);
     res.status(200).json(data);
