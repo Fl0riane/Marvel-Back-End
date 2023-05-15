@@ -9,7 +9,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 app.use(cors());
 
-mongoose.connect("mongodb://localhost/Marvel");
+mongoose.connect(process.env.MONGOOSE);
 
 const charactersRoutes = require("./routes/characters");
 const comicsRoutes = require("./routes/comics");
